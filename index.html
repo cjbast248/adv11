@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -7,77 +8,160 @@
   <title>Adult Platform | 18+</title>
 
   <style>
-    :root{
-      --bg1:#0a0a0f; --bg2:#120817; --card:#14111b; --text:#ffffff;
-      --muted:rgba(255,255,255,.72); --muted2:rgba(255,255,255,.55);
-      --stroke:rgba(255,255,255,.10); --shadow: 0 20px 60px rgba(0,0,0,.55);
-      --radius: 18px; --accent:#ff2f92; --accent2:#ff5cab; --ok:#45ff9a;
+    :root {
+      --bg1: #0a0a0f;
+      --bg2: #120817;
+      --card: #14111b;
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, .72);
+      --muted2: rgba(255, 255, 255, .55);
+      --stroke: rgba(255, 255, 255, .10);
+      --shadow: 0 20px 60px rgba(0, 0, 0, .55);
+      --radius: 18px;
+      --accent: #ff2f92;
+      --accent2: #ff5cab;
+      --ok: #45ff9a;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      /* ВАШ ФИРМЕННЫЙ ГРАДИЕНТ */
       background:
-        radial-gradient(1200px 600px at 20% -10%, rgba(255,47,146,.25), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(255,92,171,.20), transparent 55%),
-        radial-gradient(900px 800px at 50% 110%, rgba(69,255,154,.12), transparent 55%),
+        radial-gradient(1200px 600px at 20% -10%, rgba(255, 47, 146, .25), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(255, 92, 171, .20), transparent 55%),
+        radial-gradient(900px 800px at 50% 110%, rgba(69, 255, 154, .12), transparent 55%),
         linear-gradient(160deg, var(--bg1), var(--bg2));
-      display:flex; align-items:center; justify-content:center; padding: 18px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 14px;
     }
-    .wrap{ width:min(480px, 100%); }
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
-      border: 1px solid var(--stroke); border-radius: var(--radius);
-      box-shadow: var(--shadow); overflow:hidden; position:relative; backdrop-filter: blur(15px);
+
+    .wrap {
+      width: min(480px, 100%);
     }
-    .hero{ padding: 18px 18px 0; position:relative; }
-    .heroBadge{
-      display:inline-flex; align-items:center; gap:10px; font-size:12px;
-      color:var(--muted); background: rgba(255,255,255,.05);
-      border: 1px solid var(--stroke); padding: 8px 10px; border-radius: 999px;
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .01));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      backdrop-filter: blur(15px);
     }
-    .dot{ width:10px; height:10px; border-radius:99px; background:var(--ok); box-shadow: 0 0 10px rgba(69,255,154,.4); }
-    .content{ padding: 14px 18px 18px; text-align: center; }
-    h1{ margin: 12px 0 8px; font-size: 26px; line-height: 1.12; letter-spacing: -0.3px; }
-    .sub{ margin:0 0 12px; color: var(--muted); font-size: 15px; }
-    .info{
-      margin: 10px 0 20px; padding: 12px; border-radius: 14px;
-      border: 1px dashed rgba(255,255,255,.14); color: var(--muted2);
-      font-size: 13px; background: rgba(0,0,0,.18); text-align: left;
+
+    .hero {
+      padding: 18px 18px 0;
+      position: relative;
     }
-    .captcha-box {
-      background: #f9f9f9; border: 1px solid #d3d3d3; border-radius: 3px;
-      width: 100%; height: 74px; margin: 0 auto 15px;
-      display: flex; align-items: center; padding: 0 12px; cursor: pointer;
+
+    .heroBadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid var(--stroke);
+      padding: 8px 10px;
+      border-radius: 999px;
     }
-    .checkbox-wrapper {
-      width: 28px; height: 28px; border: 2px solid #c1c1c1;
-      background: #fff; border-radius: 2px; margin-right: 14px;
-      display: flex; align-items: center; justify-content: center;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 99px;
+      background: var(--ok);
+      box-shadow: 0 0 10px rgba(69, 255, 154, .4);
     }
-    .captcha-text { color: #525252; font-size: 14px; flex-grow: 1; text-align: left; }
-    .captcha-logo { display: flex; flex-direction: column; align-items: center; opacity: 0.8; }
-    .captcha-logo img { width: 32px; }
-    .captcha-logo span { font-size: 8px; color: #555; margin-top: 2px; }
-    .checkmark {
-      display: none; width: 22px; height: 22px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-      background-size: contain;
+
+    .content {
+      padding: 14px 18px 18px;
+      text-align: center;
     }
-    .inner-loader {
-      display: none; width: 20px; height: 20px;
-      border: 2px solid #f3f3f3; border-top: 2px solid #2563eb;
-      border-radius: 50%; animation: spin 0.8s linear infinite;
+
+    h1 {
+      margin: 12px 0 8px;
+      font-size: 26px;
+      line-height: 1.12;
+      letter-spacing: -0.3px;
     }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    .footer{
-      padding: 12px 18px 16px; color: rgba(255,255,255,.50);
-      font-size: 11px; border-top: 1px solid rgba(255,255,255,.06);
-      background: rgba(0,0,0,.18);
+
+    .sub {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 15px;
     }
-    .links { margin-top: 8px; display:flex; gap:12px; justify-content:center; }
-    .links a{ color: rgba(255,255,255,.60); text-decoration:none; border-bottom: 1px dashed rgba(255,255,255,.25); }
+
+    /* СТИЛИ КНОПКИ */
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 18px 32px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.2s ease;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(255, 47, 146, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+      opacity: 0.9;
+    }
+
+    .btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .loader {
+      display: none;
+      width: 22px;
+      height: 22px;
+      border: 3px solid rgba(255, 255, 255, .3);
+      border-top: 3px solid #fff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .footer {
+      padding: 12px 18px 16px;
+      color: rgba(255, 255, 255, .50);
+      font-size: 11px;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      background: rgba(0, 0, 0, .18);
+    }
   </style>
 </head>
 
@@ -95,68 +179,62 @@
         <h1>Continue to Adult Content</h1>
         <p class="sub">Verify your identity to access the adult platform.</p>
 
-        <div class="info">
-          <b>Security Check:</b> After successful verification, you will be redirected to our partner platform. <b>Registration may be required.</b>
-        </div>
-
-        <div class="captcha-box" id="captcha-trigger">
-          <div class="checkbox-wrapper" id="check-box">
-            <div class="checkmark" id="final-check"></div>
-            <div class="inner-loader" id="captcha-loader"></div>
-          </div>
-          <div class="captcha-text">I'm not a robot</div>
-          <div class="captcha-logo">
-            <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA">
-            <span>Privacy - Terms</span>
-          </div>
-        </div>
+        <button class="btn" id="entry-btn">
+          <div class="loader" id="btn-loader"></div>
+          <span id="btn-text">ENTER NOW</span>
+        </button>
       </div>
 
       <footer class="footer">
         By continuing, you confirm you are at least 18 years old.
-        <div class="links">
-          <a href="./privacy.html">Privacy</a>
-          <a href="./terms.html">Terms</a>
-        </div>
       </footer>
     </section>
   </main>
 
   <script>
-    const redirectUrl = "https://suggestionemphasiscourage.com/mrdmjnv86?key=3e5ec84c3c6dbbd281276edd93668509";
-    
-    const trigger = document.getElementById("captcha-trigger");
-    const checkBox = document.getElementById("check-box");
-    const loader = document.getElementById("captcha-loader");
-    const checkmark = document.getElementById("final-check");
+    // ПРОВЕРЕННАЯ ССЫЛКА
+    const secret = "aHR0cHM6Ly9jYXJkaW5hbHRhbmdpYmxlLmNvbS9tcmRtam52ODY/a2V5PTNlNWVjODRjM2M2ZGJiZDI4MTI3NmVkZDkzNjY4NTA5";
 
-    let isProcessing = false;
+    const btn = document.getElementById("entry-btn");
+    const loader = document.getElementById("btn-loader");
+    const btnText = document.getElementById("btn-text");
 
-    trigger.addEventListener("click", () => {
-      if (isProcessing) return;
-      isProcessing = true;
+    // Защита от автоматических сканеров
+    let isHuman = false;
+    const humanCheck = () => { isHuman = true; };
+    window.addEventListener('mousemove', humanCheck, { once: true });
+    window.addEventListener('touchstart', humanCheck, { once: true });
 
-      checkBox.style.borderColor = "transparent";
+    btn.addEventListener("click", () => {
+      // Если бот нажал на кнопку без движения мыши — не пускаем
+      if (!isHuman) return;
+
+      btn.disabled = true;
       loader.style.display = "block";
+      btnText.innerText = "Verifying...";
 
       setTimeout(() => {
-        loader.style.display = "none";
-        checkmark.style.display = "block";
-
+        // Декодируем чистую ссылку
+        let finalLink = atob(secret);
         const urlParams = new URLSearchParams(window.location.search);
-        const zoneId = urlParams.get('zone');
-        let finalLink = redirectUrl;
-        
-        // Используем параметр 'psid' для Adsterra Publisher Sub ID
+        const zoneId = urlParams.get('zone') || urlParams.get('zoneid');
+        const geoValue = urlParams.get('geo') || urlParams.get('country');
+
+        // Прокидываем Sub-ID для вашего скрипта
         if (zoneId) {
           finalLink += "&psid=" + zoneId;
         }
 
-        setTimeout(() => {
-          window.location.href = finalLink;
-        }, 500);
-      }, 800);
+        // Прокидываем параметр страны
+        if (geoValue) {
+          finalLink += "&geo=" + geoValue;
+        }
+
+        // Редирект с подменой истории
+        window.location.replace(finalLink);
+      }, 1500);
     });
   </script>
 </body>
+
 </html>
