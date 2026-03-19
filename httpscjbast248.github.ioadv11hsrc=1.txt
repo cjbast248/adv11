@@ -1,0 +1,5 @@
+https://cjbast248.github.io/adv11/?hsrc=1&zoneid={{zoneid}}&geo={{geo}}
+https://cjbast248.github.io/adv22/?hsrc=1&zoneid={{zoneid}}&geo={{geo}}
+https://cjbast248.github.io/adv33/?hsrc=1&zoneid={{zoneid}}&geo={{geo}}
+https://cjbast248.github.io/adv44/?hsrc=1&zoneid={{zoneid}}&geo={{geo}}
+https://cjbast248.github.io/adv55/?hsrc=1&zoneid={{zoneid}}&geo={{geo}}
